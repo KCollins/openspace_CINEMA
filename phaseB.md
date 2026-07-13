@@ -55,7 +55,6 @@ gantt
 
     section Data Man.
         Draft Data Management Plan	:DataPlan, 2026-11-01, 30d
-```
 
 
     section PDR Slides
