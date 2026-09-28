@@ -1,0 +1,34 @@
+local globe = asset.require("scene/solarsystem/planets/earth/globe")
+
+-- Point this to the directory where your Python script saved the PNGs
+local imagePath = asset.resource("./oval_images/global/")
+
+local AuroraLayer = {
+    Identifier = "Aurora",
+    Name = "AuroraX Mosaic",
+    Enabled = asset.enabled,
+    ZIndex = 9005, -- High ZIndex to render on top of clouds and surface textures
+    Type = "TemporalTileProvider",
+    Mode = "Prototyped",
+    Prototyped = {
+        Time = {
+            Start = "2024-01-15T00:00:00",
+            End = "2024-01-15T05:30:00"
+        },
+        TemporalResolution = "15m",
+        TimeFormat = "YYYY-MM-DD-HR-MN",
+        Prototype = imagePath .. "${OpenSpaceTimeId}.png"
+    },
+    Description = "AuroraX All-Sky Camera Mosaic",
+    Opacity = 1.0
+}
+
+asset.onInitialize(function()
+    openspace.globebrowsing.addLayer(globe.Earth.Identifier, "ColorLayers", AuroraLayer)
+end)
+
+asset.onDeinitialize(function()
+    openspace.globebrowsing.deleteLayer(globe.Earth.Identifier, "ColorLayers", AuroraLayer)
+end)
+
+asset.export("Prototype", AuroraLayer)
