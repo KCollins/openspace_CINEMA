@@ -1,0 +1,53 @@
+local earthTransforms = asset.require("scene/solarsystem/planets/earth/transforms")
+local geomagDataDirectory = asset.resource("osfls_geomag")
+
+local GannonGeomagFields = {
+    Identifier = "GannonStorm-Ground-Magnetometer-Vectors",
+    Parent = "Earth",
+
+    Renderable = {
+        Type = "RenderableFieldlinesSequence",
+        SourceFolder = geomagDataDirectory,
+        InputFileType = "Osfls",
+        ShowAtAllTimes = true,
+        LineWidth = 4.0,
+
+        -- Scalar quantity 0 corresponds to "b_magnitude_nT" exported in Python
+        ColorMethod = "By Quantity",
+        ColorQuantity = 0,
+
+        -- Magnetic field perturbation magnitude during a G4/G5 storm typically ranges from 0 to 1500+ nT
+        ColorTableRanges = { { 0.0, 800.0 } },
+        ColorMinMaxRange = { 0.0, 2000.0 },
+        
+        -- Default base color fallback (RGBA) if no color table txt file is specified
+        Color = { 0.8, 0.2, 0.1, 0.9 },
+
+        -- Animated particle pulse parameters along magnetic vectors
+        ParticleSpacing = 15.0,
+        ParticleSize = 12.0,
+        FlowColor = { 1.0, 0.9, 0.3, 0.8 }, -- High-visibility golden pulse
+        FlowSpeed = 5.0,
+        FlowEnabled = false,
+        ReversedFlow = false
+    },
+    GUI = {
+        Path = "/Earth/Magnetosphere",
+        Name = "Gannon Storm Ground Magnetic Perturbations",
+        Description = "Ground magnetometer perturbation vector fieldlines during the May 10-11, 2024 geomagnetic storm."
+    }
+}
+
+asset.onInitialize(function()
+    openspace.addSceneGraphNode(GannonGeomagFields)
+    
+    -- Note: The Python script already elevated all fieldline vertices to an altitude 
+    -- of +20 km above Earth's radius (R_EARTH = 6,371,000m), so no manual coordinate 
+    -- position translation is required to prevent z-fighting with the Earth mesh.
+end)
+
+asset.onDeinitialize(function()
+    openspace.removeSceneGraphNode(GannonGeomagFields)
+end)
+
+asset.export(GannonGeomagFields)
