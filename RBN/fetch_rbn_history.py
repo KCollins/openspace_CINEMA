@@ -4,9 +4,8 @@ import io
 import os
 import random
 import zipfile
-from collections import defaultdict
 from datetime import datetime, timedelta, timezone
-from typing import Dict, List, Optional, Set, Tuple
+from typing import List, Optional, Set, Tuple
 import requests
 
 from station_resolver import StationResolver
@@ -24,7 +23,6 @@ def parse_iso_utc(ts: str) -> datetime:
 
 
 def download_daily_zip(date_str: str, data_dir: str) -> Optional[str]:
-    """Downloads YYYYMMDD.zip from RBN history archive if not already cached locally."""
     zip_path = os.path.join(data_dir, f"{date_str}.zip")
     if os.path.exists(zip_path):
         return zip_path
@@ -53,33 +51,102 @@ def parse_csv_set(val: Optional[str]) -> Optional[Set[str]]:
     return items if items else None
 
 
+def write_asset_file(asset_path: str, start_dt: datetime, end_dt: datetime) -> None:
+    """Writes rbn_fieldlines.asset with matching TimeFrameInterval bounds."""
+    start_str = start_dt.strftime("%Y-%m-%dT%H:%M:%S")
+    end_str = end_dt.strftime("%Y-%m-%dT%H:%M:%S")
+    lua_content = f"""local earthTransforms = asset.require("scene/solarsystem/planets/earth/transforms")
+
+local node = {{
+  Identifier = "Earth-RBN-Propagation",
+  Parent = "Earth",
+  TimeFrame = {{
+    Type = "TimeFrameInterval",
+    Start = "{start_str}",
+    End = "{end_str}"
+  }},
+  Renderable = {{
+    Type = "RenderableFieldlinesSequence",
+    LoadingType = "StaticLoading",
+    SourceFolder = asset.resource("osfls"),
+    InputFileType = "Osfls",
+
+    LineWidth = 2.0,
+    ColorMethod = "By Quantity",
+    ColorQuantity = 0,
+    ColorTableRanges = {{
+      {{ 0.0, 11.0 }},       -- 0: band_index
+      {{ 1800.0, 30000.0 }}, -- 1: freq_khz
+      {{ 0.0, 45.0 }},       -- 2: snr_db
+      {{ 10.0, 45.0 }},      -- 3: speed_wpm
+      {{ 0.0, 16000.0 }}     -- 4: distance_km
+    }},
+    ColorMinMaxRange = {{ 0.0, 11.0 }},
+    ColorTablePaths = {{
+      asset.resource("colortables/rbn-band.txt"),
+      asset.resource("colortables/rbn-freq.txt"),
+      asset.resource("colortables/rbn-snr.txt"),
+      asset.resource("colortables/rbn-speed.txt"),
+      asset.resource("colortables/rbn-distance.txt")
+    }},
+    Color = {{ 1.0, 0.84, 0.0, 1.0 }},
+
+    ParticleSpacing = 25.0,
+    ParticleSize = 18.0,
+    FlowColor = {{ 1.0, 1.0, 1.0, 0.45 }},
+    FlowSpeed = 20.0,
+    FlowEnabled = true,
+    ReversedFlow = false,
+    Enabled = true
+  }},
+  GUI = {{
+    Path = "/Solar System/Planets/Earth/Radio Propagation",
+    Name = "RBN Propagation Arcs",
+    Description = "Reverse Beacon Network TX-to-RX propagation paths"
+  }}
+}}
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(node)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(node)
+end)
+
+asset.export(node)
+"""
+    with open(asset_path, "w", encoding="utf-8") as f:
+        f.write(lua_content)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch historical RBN archives and build OpenSpace .osfls files.")
-    parser.add_argument("--start", required=True, help="Start UTC timestamp (ISO 8601, e.g. 2025-10-25T00:00:00Z)")
-    parser.add_argument("--end", required=True, help="End UTC timestamp (ISO 8601, e.g. 2025-10-25T06:00:00Z)")
-    parser.add_argument("--bin-minutes", type=int, default=15, help="Discrete time bucket width in minutes (default: 15)")
-    parser.add_argument("--data-dir", default="./data", help="Directory for cached RBN zips, cty.dat, and SQLite DB")
-    parser.add_argument("--out-dir", default="./output/osfls", help="Output directory for .osfls sequence")
+    parser.add_argument("--start", required=True, help="Start UTC timestamp (ISO 8601)")
+    parser.add_argument("--end", required=True, help="End UTC timestamp (ISO 8601)")
+    parser.add_argument("--step-minutes", type=int, default=1, help="Frame interval in minutes (default: 1)")
+    parser.add_argument("--window-minutes", type=int, default=3, help="How long each spot stays visible in minutes (default: 3)")
+    parser.add_argument("--data-dir", default="./data")
+    parser.add_argument("--out-dir", default="./output/osfls")
+    parser.add_argument("--asset-out", default="./output/rbn_fieldlines.asset")
 
-    # RBN-aligned query filters
-    parser.add_argument("--bands", default="", help="Comma-separated bands (e.g., 40m,20m,15m,10m)")
-    parser.add_argument("--freq-min", type=float, default=None, help="Minimum frequency in kHz")
-    parser.add_argument("--freq-max", type=float, default=None, help="Maximum frequency in kHz")
-    parser.add_argument("--tx-modes", default="", help="Comma-separated tx_mode values (e.g., CW,FT8,RTTY)")
-    parser.add_argument("--spot-types", default="", help="Comma-separated RBN mode values (e.g., CQ,DX,BEACON)")
-    parser.add_argument("--dx", default="", help="Comma-separated transmitting station callsigns")
-    parser.add_argument("--de", default="", help="Comma-separated receiving skimmer callsigns")
-    parser.add_argument("--dx-cont", default="", help="Comma-separated TX continents (NA,EU,AS,SA,OC,AF)")
-    parser.add_argument("--de-cont", default="", help="Comma-separated RX continents (NA,EU,AS,SA,OC,AF)")
-    parser.add_argument("--min-snr", type=float, default=None, help="Minimum SNR in dB")
-    parser.add_argument("--max-snr", type=float, default=None, help="Maximum SNR in dB")
-    parser.add_argument("--min-speed", type=float, default=None, help="Minimum CW/RTTY speed in WPM")
-    parser.add_argument("--max-arcs-per-frame", type=int, default=3000, help="Max arcs per frame (0 = unlimited)")
+    parser.add_argument("--bands", default="")
+    parser.add_argument("--freq-min", type=float, default=None)
+    parser.add_argument("--freq-max", type=float, default=None)
+    parser.add_argument("--tx-modes", default="")
+    parser.add_argument("--spot-types", default="")
+    parser.add_argument("--dx", default="")
+    parser.add_argument("--de", default="")
+    parser.add_argument("--dx-cont", default="")
+    parser.add_argument("--de-cont", default="")
+    parser.add_argument("--min-snr", type=float, default=None)
+    parser.add_argument("--max-snr", type=float, default=None)
+    parser.add_argument("--min-speed", type=float, default=None)
+    parser.add_argument("--max-arcs-per-frame", type=int, default=1500)
 
-    # Callsign lookup options
-    parser.add_argument("--qrz-user", default=os.getenv("QRZ_USER", ""), help="QRZ XML username")
-    parser.add_argument("--qrz-pass", default=os.getenv("QRZ_PASS", ""), help="QRZ XML password")
-    parser.add_argument("--strict-qrz", action="store_true", help="Drop stations without exact QRZ/skimmer coords")
+    parser.add_argument("--qrz-user", default=os.getenv("QRZ_USER", ""))
+    parser.add_argument("--qrz-pass", default=os.getenv("QRZ_PASS", ""))
+    parser.add_argument("--strict-qrz", action="store_true")
 
     args = parser.parse_args()
     os.makedirs(args.data_dir, exist_ok=True)
@@ -87,7 +154,8 @@ def main() -> None:
 
     start_dt = parse_iso_utc(args.start)
     end_dt = parse_iso_utc(args.end)
-    bin_delta = timedelta(minutes=args.bin_minutes)
+    step_delta = timedelta(minutes=args.step_minutes)
+    window_delta = timedelta(minutes=args.window_minutes)
 
     band_filter = {b.lower() for b in args.bands.split(",") if b.strip()} if args.bands else None
     tx_mode_filter = parse_csv_set(args.tx_modes)
@@ -97,18 +165,10 @@ def main() -> None:
     dx_cont_filter = parse_csv_set(args.dx_cont)
     de_cont_filter = parse_csv_set(args.de_cont)
 
-    # Pre-initialize all discrete time buckets between start_dt and end_dt
-    binned_spots: Dict[datetime, List[dict]] = {}
-    cursor = start_dt
-    while cursor < end_dt:
-        binned_spots[cursor] = []
-        cursor += bin_delta
-
-    # Iterate over all UTC calendar days overlapping [start_dt, end_dt)
+    matched_spots: List[dict] = []
     day_cursor = start_dt.replace(hour=0, minute=0, second=0, microsecond=0)
     last_day = (end_dt - timedelta(seconds=1)).replace(hour=0, minute=0, second=0, microsecond=0)
 
-    total_matched = 0
     while day_cursor <= last_day:
         date_str = day_cursor.strftime("%Y%m%d")
         zip_path = download_daily_zip(date_str, args.data_dir)
@@ -174,28 +234,23 @@ def main() -> None:
                             if args.min_speed is not None and speed_wpm < args.min_speed:
                                 continue
 
-                            # Assign to discrete time bucket
-                            offset_sec = (spot_dt - start_dt).total_seconds()
-                            bin_idx = int(offset_sec // (args.bin_minutes * 60))
-                            bucket_dt = start_dt + timedelta(minutes=bin_idx * args.bin_minutes)
-                            if bucket_dt in binned_spots:
-                                binned_spots[bucket_dt].append(
-                                    {
-                                        "dx": dx_call,
-                                        "dx_pfx": (row.get("dx_pfx") or "").strip().upper(),
-                                        "de": de_call,
-                                        "de_pfx": (row.get("de_pfx") or "").strip().upper(),
-                                        "band": band,
-                                        "freq_khz": freq_khz,
-                                        "snr_db": snr_db,
-                                        "speed_wpm": speed_wpm,
-                                    }
-                                )
-                                total_matched += 1
-
+                            matched_spots.append(
+                                {
+                                    "dt": spot_dt,
+                                    "dx": dx_call,
+                                    "dx_pfx": (row.get("dx_pfx") or "").strip().upper(),
+                                    "de": de_call,
+                                    "de_pfx": (row.get("de_pfx") or "").strip().upper(),
+                                    "band": band,
+                                    "freq_khz": freq_khz,
+                                    "snr_db": snr_db,
+                                    "speed_wpm": speed_wpm,
+                                }
+                            )
         day_cursor += timedelta(days=1)
 
-    print(f"Matched {total_matched} spots across {len(binned_spots)} time buckets.")
+    matched_spots.sort(key=lambda s: s["dt"])
+    print(f"Matched {len(matched_spots)} total spots.")
 
     resolver = StationResolver(
         data_dir=args.data_dir,
@@ -205,17 +260,28 @@ def main() -> None:
     )
 
     random.seed(42)
-    try:
-        for bucket_dt in sorted(binned_spots.keys()):
-            spots = binned_spots[bucket_dt]
-            if args.max_arcs_per_frame > 0 and len(spots) > args.max_arcs_per_frame:
-                spots = random.sample(spots, args.max_arcs_per_frame)
+    left_idx = 0
+    right_idx = 0
+    n_spots = len(matched_spots)
 
-            # Deduplicate identical (tx, rx, band) pairs within a single time bucket
+    try:
+        frame_dt = start_dt
+        while frame_dt < end_dt:
+            win_end = frame_dt + window_delta
+            while left_idx < n_spots and matched_spots[left_idx]["dt"] < frame_dt:
+                left_idx += 1
+            if right_idx < left_idx:
+                right_idx = left_idx
+            while right_idx < n_spots and matched_spots[right_idx]["dt"] < win_end:
+                right_idx += 1
+
+            window_spots = matched_spots[left_idx:right_idx]
+            if args.max_arcs_per_frame > 0 and len(window_spots) > args.max_arcs_per_frame:
+                window_spots = random.sample(window_spots, args.max_arcs_per_frame)
+
             seen_paths: Set[Tuple[str, str, str]] = set()
             arcs = []
-
-            for s in spots:
+            for s in window_spots:
                 path_key = (s["dx"], s["de"], s["band"])
                 if path_key in seen_paths:
                     continue
@@ -228,22 +294,22 @@ def main() -> None:
 
                 band_idx = resolve_band_index(s["band"], s["freq_khz"])
                 arc_res = build_propagation_arc(
-                    tx_coords[0],
-                    tx_coords[1],
-                    rx_coords[0],
-                    rx_coords[1],
+                    tx_coords[0], tx_coords[1], rx_coords[0], rx_coords[1],
                     scalars=(band_idx, s["freq_khz"], s["snr_db"], s["speed_wpm"], 0.0),
                 )
                 if arc_res is not None:
                     xyz, dist_km = arc_res
-                    scalars = (band_idx, s["freq_khz"], s["snr_db"], s["speed_wpm"], dist_km)
-                    arcs.append((xyz, scalars))
+                    arcs.append((xyz, (band_idx, s["freq_khz"], s["snr_db"], s["speed_wpm"], dist_km)))
 
-            filename = bucket_dt.strftime("%Y-%m-%dT%H-%M-%S-000.osfls")
-            out_path = os.path.join(args.out_dir, filename)
-            trigger_j2000 = dt_to_j2000_seconds(bucket_dt)
-            export_arcs_to_osfls(out_path, arcs, trigger_j2000)
-            print(f"Wrote {filename} ({len(arcs)} arcs)")
+            filename = frame_dt.strftime("%Y-%m-%dT%H-%M-%S-000.osfls")
+            export_arcs_to_osfls(os.path.join(args.out_dir, filename), arcs, dt_to_j2000_seconds(frame_dt))
+            frame_dt += step_delta
+
+        # Write a final empty frame at end_dt so arcs clear at sequence completion
+        end_filename = end_dt.strftime("%Y-%m-%dT%H-%M-%S-000.osfls")
+        export_arcs_to_osfls(os.path.join(args.out_dir, end_filename), [], dt_to_j2000_seconds(end_dt))
+        write_asset_file(args.asset_out, start_dt, end_dt)
+        print(f"Sequence complete through {end_filename}; wrote {args.asset_out}.")
     finally:
         resolver.close()
 
