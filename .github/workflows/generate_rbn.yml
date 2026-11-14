@@ -1,0 +1,29 @@
+name: Build RBN OpenSpace Assets
+
+on:
+  workflow_dispatch: # Allows manual runs from the Actions tab
+  schedule:
+    - cron: "0 */6 * * *" # Optional: run every 6 hours
+
+jobs:
+  build-osfls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install numpy requests
+
+      - name: Run RBN pipeline
+        env:
+          QRZ_USER: ${{ secrets.QRZ_USER }}
+          QRZ_PASS: ${{ secrets.QRZ_PASS }}
+        run: |
+          chmod +x pipeline.sh
+          ./pipeline.sh
