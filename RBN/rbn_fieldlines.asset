@@ -1,0 +1,61 @@
+local earthTransforms = asset.require("scene/solarsystem/planets/earth/transforms")
+
+local node = {
+  Identifier = "Earth-RBN-Propagation",
+  Parent = "Earth",
+  Renderable = {
+    Type = "RenderableFieldlinesSequence",
+    LoadingType = "DynamicLoading",
+    SourceFolder = asset.resource("osfls"),
+    InputFileType = "Osfls",
+
+    LineWidth = 2.0,
+    ColorMethod = "By Quantity",
+    -- Quantities embedded in .osfls:
+    --   0 = band_index (160m..2m)
+    --   1 = freq_khz
+    --   2 = snr_db
+    --   3 = speed_wpm
+    --   4 = distance_km
+    ColorQuantity = 0,
+    ColorTableRanges = {
+      { 0.0, 11.0 },       -- 0: band_index
+      { 1800.0, 30000.0 }, -- 1: freq_khz (HF)
+      { 0.0, 45.0 },       -- 2: snr_db
+      { 10.0, 45.0 },      -- 3: speed_wpm
+      { 0.0, 16000.0 }     -- 4: distance_km
+    },
+    ColorMinMaxRange = { 0.0, 11.0 },
+    ColorTablePaths = {
+      asset.resource("colortables/rbn-band.txt"),
+      asset.resource("colortables/rbn-freq.txt"),
+      asset.resource("colortables/rbn-snr.txt"),
+      asset.resource("colortables/rbn-speed.txt"),
+      asset.resource("colortables/rbn-distance.txt")
+    },
+    Color = { 1.0, 0.84, 0.0, 1.0 },
+
+    ParticleSpacing = 25.0,
+    ParticleSize = 18.0,
+    FlowColor = { 1.0, 1.0, 1.0, 0.45 },
+    FlowSpeed = 20.0,
+    FlowEnabled = true,
+    ReversedFlow = false, -- Vertices are ordered TX -> RX
+    Enabled = true
+  },
+  GUI = {
+    Path = "/Solar System/Planets/Earth/Radio Propagation",
+    Name = "RBN Propagation Arcs",
+    Description = "Reverse Beacon Network TX-to-RX propagation paths"
+  }
+}
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(node)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(node)
+end)
+
+asset.export(node)
