@@ -3,9 +3,14 @@ local earthTransforms = asset.require("scene/solarsystem/planets/earth/transform
 local node = {
   Identifier = "Earth-RBN-Propagation",
   Parent = "Earth",
+  TimeFrame = {
+    Type = "TimeFrameInterval",
+    Start = "2025-10-25T00:00:00",
+    End = "2025-10-25T06:00:00"
+  },
   Renderable = {
     Type = "RenderableFieldlinesSequence",
-    LoadingType = "DynamicLoading",
+    LoadingType = "StaticLoading",
     SourceFolder = asset.resource("osfls"),
     InputFileType = "Osfls",
 
