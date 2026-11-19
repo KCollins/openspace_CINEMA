@@ -1,0 +1,1805 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.625,
+          41.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "W2NAF",
+        "URL": "station_analysis/",
+        "ID": "28",
+        "name": "W2NAF (28)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/28",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.54166666666666,
+          42.645833333333336
+        ]
+      },
+      "properties": {
+        "title": "KD1LE node 43-1",
+        "URL": "station_analysis/",
+        "ID": "34",
+        "name": "KD1LE node 43-1 (34)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/34",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.04166666666666,
+          33.47916666666667
+        ]
+      },
+      "properties": {
+        "title": "N5BRG-Grape1",
+        "URL": "station_analysis/",
+        "ID": "39",
+        "name": "N5BRG-Grape1 (39)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/39",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.04166666666666,
+          33.47916666666667
+        ]
+      },
+      "properties": {
+        "title": "N5BRG-Grape1-MAG1",
+        "URL": "station_analysis/",
+        "ID": "40",
+        "name": "N5BRG-Grape1-MAG1 (40)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/40",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.375,
+          42.6875
+        ]
+      },
+      "properties": {
+        "title": "KB1HFT Node S000043 (DRF)",
+        "URL": "station_analysis/",
+        "ID": "43",
+        "name": "KB1HFT Node S000043 (DRF) (43)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/43",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.875,
+          33.3125
+        ]
+      },
+      "properties": {
+        "title": "KC4LE_G1_Node60_DRF",
+        "URL": "station_analysis/",
+        "ID": "46",
+        "name": "KC4LE_G1_Node60_DRF (46)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/46",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.625,
+          44.020833333333336
+        ]
+      },
+      "properties": {
+        "title": "KE9SA Grape DRF S48",
+        "URL": "station_analysis/",
+        "ID": "48",
+        "name": "KE9SA Grape DRF S48 (48)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/48",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.625,
+          42.520833333333336
+        ]
+      },
+      "properties": {
+        "title": "AB1XB Node 33 DRF",
+        "URL": "station_analysis/",
+        "ID": "49",
+        "name": "AB1XB Node 33 DRF (49)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/49",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.95833333333333,
+          31.895833333333332
+        ]
+      },
+      "properties": {
+        "title": "WA9TKK",
+        "URL": "station_analysis/",
+        "ID": "53",
+        "name": "WA9TKK (53)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/53",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.125,
+          35.0625
+        ]
+      },
+      "properties": {
+        "title": "AA6BD",
+        "URL": "station_analysis/",
+        "ID": "58",
+        "name": "AA6BD (58)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/58",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95833333333333,
+          41.395833333333336
+        ]
+      },
+      "properties": {
+        "title": "WPHAM",
+        "URL": "station_analysis/",
+        "ID": "63",
+        "name": "WPHAM (63)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/63",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.70833333333333,
+          35.10416666666667
+        ]
+      },
+      "properties": {
+        "title": "W7LUX",
+        "URL": "station_analysis/",
+        "ID": "68",
+        "name": "W7LUX (68)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/68",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.958333333333334,
+          53.270833333333336
+        ]
+      },
+      "properties": {
+        "title": "pa0rwt Grape-1 DRF",
+        "URL": "station_analysis/",
+        "ID": "83",
+        "name": "pa0rwt Grape-1 DRF (83)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/83",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.125,
+          32.9375
+        ]
+      },
+      "properties": {
+        "title": "N6RFM/5",
+        "URL": "station_analysis/",
+        "ID": "95",
+        "name": "N6RFM/5 (95)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/95",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.625,
+          42.645833333333336
+        ]
+      },
+      "properties": {
+        "title": "KD1LE node 43-2",
+        "URL": "station_analysis/",
+        "ID": "103",
+        "name": "KD1LE node 43-2 (103)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/103",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45833333333333,
+          42.645833333333336
+        ]
+      },
+      "properties": {
+        "title": "KD1LE node 43-3",
+        "URL": "station_analysis/",
+        "ID": "104",
+        "name": "KD1LE node 43-3 (104)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/104",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.95833333333333,
+          38.104166666666664
+        ]
+      },
+      "properties": {
+        "title": "KPH",
+        "URL": "station_analysis/",
+        "ID": "108",
+        "name": "KPH (108)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/108",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.95833333333333,
+          40.6875
+        ]
+      },
+      "properties": {
+        "title": "WW0WWV/0",
+        "URL": "station_analysis/",
+        "ID": "109",
+        "name": "WW0WWV/0 (109)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/109",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.79166666666667,
+          46.895833333333336
+        ]
+      },
+      "properties": {
+        "title": "AC0G_ND",
+        "URL": "station_analysis/",
+        "ID": "111",
+        "name": "AC0G_ND (111)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/111",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.625,
+          40.1875
+        ]
+      },
+      "properties": {
+        "title": "N8GA",
+        "URL": "station_analysis/",
+        "ID": "113",
+        "name": "N8GA (113)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/113",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.79166666666667,
+          38.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "KJ6MKI",
+        "URL": "station_analysis/",
+        "ID": "115",
+        "name": "KJ6MKI (115)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/115",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.29166666666666,
+          41.60416666666667
+        ]
+      },
+      "properties": {
+        "title": "KA7OEI",
+        "URL": "station_analysis/",
+        "ID": "116",
+        "name": "KA7OEI (116)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/116",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.375,
+          38.895833333333336
+        ]
+      },
+      "properties": {
+        "title": "KV0S_MO",
+        "URL": "station_analysis/",
+        "ID": "122",
+        "name": "KV0S_MO (122)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/122",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.875,
+          42.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "K9TRV RX888-1",
+        "URL": "station_analysis/",
+        "ID": "145",
+        "name": "K9TRV RX888-1 (145)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/145",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.79166666666667,
+          47.3125
+        ]
+      },
+      "properties": {
+        "title": "WI6P GRAPE1_DRF",
+        "URL": "station_analysis/",
+        "ID": "149",
+        "name": "WI6P GRAPE1_DRF (149)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/149",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.20833333333333,
+          41.270833333333336
+        ]
+      },
+      "properties": {
+        "title": "N2YCH",
+        "URL": "station_analysis/",
+        "ID": "151",
+        "name": "N2YCH (151)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/151",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.041666666666667,
+          51.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "Maasbree",
+        "URL": "station_analysis/",
+        "ID": "155",
+        "name": "Maasbree (155)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/155",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.375,
+          42.5625
+        ]
+      },
+      "properties": {
+        "title": "Carlisle",
+        "URL": "station_analysis/",
+        "ID": "156",
+        "name": "Carlisle (156)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/156",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.125,
+          38.9375
+        ]
+      },
+      "properties": {
+        "title": "AC0G_B4",
+        "URL": "station_analysis/",
+        "ID": "170",
+        "name": "AC0G_B4 (170)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/170",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.125,
+          38.9375
+        ]
+      },
+      "properties": {
+        "title": "AC0G_B1A",
+        "URL": "station_analysis/",
+        "ID": "171",
+        "name": "AC0G_B1A (171)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/171",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.0,
+          80.5
+        ]
+      },
+      "properties": {
+        "title": "VY0ERC",
+        "URL": "station_analysis/",
+        "ID": "172",
+        "name": "VY0ERC (172)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/172",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          173.04166666666666,
+          -41.02083333333333
+        ]
+      },
+      "properties": {
+        "title": "Marahau",
+        "URL": "station_analysis/",
+        "ID": "177",
+        "name": "Marahau (177)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/177",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.041666666666666664,
+          51.4375
+        ]
+      },
+      "properties": {
+        "title": "G4HZX-Main",
+        "URL": "station_analysis/",
+        "ID": "179",
+        "name": "G4HZX-Main (179)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/179",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.54166666666666,
+          33.395833333333336
+        ]
+      },
+      "properties": {
+        "title": "AB4EJ-m",
+        "URL": "station_analysis/",
+        "ID": "199",
+        "name": "AB4EJ-m (199)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/199",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.95833333333333,
+          40.6875
+        ]
+      },
+      "properties": {
+        "title": "WW0WWV Node 16",
+        "URL": "station_analysis/",
+        "ID": "206",
+        "name": "WW0WWV Node 16 (206)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/206",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.04166666666666,
+          39.9375
+        ]
+      },
+      "properties": {
+        "title": "K0WWX Node 27",
+        "URL": "station_analysis/",
+        "ID": "210",
+        "name": "K0WWX Node 27 (210)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/210",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.70833333333333,
+          35.10416666666667
+        ]
+      },
+      "properties": {
+        "title": "W7LUX Node 29",
+        "URL": "station_analysis/",
+        "ID": "211",
+        "name": "W7LUX Node 29 (211)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/211",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.625,
+          42.47916666666667
+        ]
+      },
+      "properties": {
+        "title": "AB1XB Node 33 G1L",
+        "URL": "station_analysis/",
+        "ID": "214",
+        "name": "AB1XB Node 33 G1L (214)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/214",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.54166666666666,
+          42.6875
+        ]
+      },
+      "properties": {
+        "title": "KD1LE Node 43",
+        "URL": "station_analysis/",
+        "ID": "220",
+        "name": "KD1LE Node 43 (220)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/220",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.79166666666667,
+          41.5625
+        ]
+      },
+      "properties": {
+        "title": "K9ATR Node 47",
+        "URL": "station_analysis/",
+        "ID": "224",
+        "name": "K9ATR Node 47 (224)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/224",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.79166666666666,
+          32.10416666666667
+        ]
+      },
+      "properties": {
+        "title": "KB7NIE Node 50",
+        "URL": "station_analysis/",
+        "ID": "227",
+        "name": "KB7NIE Node 50 (227)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/227",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.70833333333333,
+          32.270833333333336
+        ]
+      },
+      "properties": {
+        "title": "AA7FV Node 52",
+        "URL": "station_analysis/",
+        "ID": "229",
+        "name": "AA7FV Node 52 (229)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/229",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.625,
+          44.020833333333336
+        ]
+      },
+      "properties": {
+        "title": "KE9SA Node 56",
+        "URL": "station_analysis/",
+        "ID": "233",
+        "name": "KE9SA Node 56 (233)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/233",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.875,
+          33.3125
+        ]
+      },
+      "properties": {
+        "title": "KC4LE_G1_Node60_fldigi",
+        "URL": "station_analysis/",
+        "ID": "236",
+        "name": "KC4LE_G1_Node60_fldigi (236)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/236",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5,
+          41.541666666666664
+        ]
+      },
+      "properties": {
+        "title": "AF8A Node 63",
+        "URL": "station_analysis/",
+        "ID": "238",
+        "name": "AF8A Node 63 (238)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/238",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.54166666666666,
+          32.97916666666667
+        ]
+      },
+      "properties": {
+        "title": "KM5GT Node 79",
+        "URL": "station_analysis/",
+        "ID": "247",
+        "name": "KM5GT Node 79 (247)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/247",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.625,
+          38.0625
+        ]
+      },
+      "properties": {
+        "title": "WB9YIG Node 85",
+        "URL": "station_analysis/",
+        "ID": "252",
+        "name": "WB9YIG Node 85 (252)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/252",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.5,
+          42.875
+        ]
+      },
+      "properties": {
+        "title": "N2EZY Node 88",
+        "URL": "station_analysis/",
+        "ID": "255",
+        "name": "N2EZY Node 88 (255)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/255",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.70833333333333,
+          32.270833333333336
+        ]
+      },
+      "properties": {
+        "title": "AC7JD Node 90",
+        "URL": "station_analysis/",
+        "ID": "257",
+        "name": "AC7JD Node 90 (257)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/257",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.04166666666666,
+          37.22916666666667
+        ]
+      },
+      "properties": {
+        "title": "KN4HZ Node 93",
+        "URL": "station_analysis/",
+        "ID": "260",
+        "name": "KN4HZ Node 93 (260)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/260",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.125,
+          52.020833333333336
+        ]
+      },
+      "properties": {
+        "title": "GB0PSC",
+        "URL": "station_analysis/",
+        "ID": "262",
+        "name": "GB0PSC (262)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/262",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.2916666666666667,
+          50.729166666666664
+        ]
+      },
+      "properties": {
+        "title": "g4zfq_Alan",
+        "URL": "station_analysis/",
+        "ID": "263",
+        "name": "g4zfq_Alan (263)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/263",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.041666666666668,
+          47.6875
+        ]
+      },
+      "properties": {
+        "title": "OE3GBB",
+        "URL": "station_analysis/",
+        "ID": "265",
+        "name": "OE3GBB (265)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/265",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.958333333333334,
+          53.270833333333336
+        ]
+      },
+      "properties": {
+        "title": "pa0rwt Grape-1 Fldigi",
+        "URL": "station_analysis/",
+        "ID": "267",
+        "name": "pa0rwt Grape-1 Fldigi (267)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/267",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.625,
+          42.47916666666667
+        ]
+      },
+      "properties": {
+        "title": "AB1XB Node 1002 G2",
+        "URL": "station_analysis/",
+        "ID": "270",
+        "name": "AB1XB Node 1002 G2 (270)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/270",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.875,
+          33.3125
+        ]
+      },
+      "properties": {
+        "title": "KC4LE_G2_Node1006",
+        "URL": "station_analysis/",
+        "ID": "273",
+        "name": "KC4LE_G2_Node1006 (273)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/273",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.625,
+          44.020833333333336
+        ]
+      },
+      "properties": {
+        "title": "KE9SA Node 1008",
+        "URL": "station_analysis/",
+        "ID": "275",
+        "name": "KE9SA Node 1008 (275)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/275",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.58333333333333,
+          29.833333333333332
+        ]
+      },
+      "properties": {
+        "title": "KK4HP Node 1009",
+        "URL": "station_analysis/",
+        "ID": "276",
+        "name": "KK4HP Node 1009 (276)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/276",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.04166666666667,
+          41.479166666666664
+        ]
+      },
+      "properties": {
+        "title": "AD0CQ Node 1010",
+        "URL": "station_analysis/",
+        "ID": "277",
+        "name": "AD0CQ Node 1010 (277)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/277",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.0,
+          38.0
+        ]
+      },
+      "properties": {
+        "title": "N0AX Node 1012",
+        "URL": "station_analysis/",
+        "ID": "279",
+        "name": "N0AX Node 1012 (279)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/279",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.83333333333333,
+          40.916666666666664
+        ]
+      },
+      "properties": {
+        "title": "K0DSP Node 1021",
+        "URL": "station_analysis/",
+        "ID": "287",
+        "name": "K0DSP Node 1021 (287)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/287",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.45833333333333,
+          43.979166666666664
+        ]
+      },
+      "properties": {
+        "title": "KD0FTJ Node 1022",
+        "URL": "station_analysis/",
+        "ID": "288",
+        "name": "KD0FTJ Node 1022 (288)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/288",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.54166666666667,
+          30.854166666666668
+        ]
+      },
+      "properties": {
+        "title": "NI5F Node 1026",
+        "URL": "station_analysis/",
+        "ID": "292",
+        "name": "NI5F Node 1026 (292)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/292",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.16666666666667,
+          30.875
+        ]
+      },
+      "properties": {
+        "title": "KK2Z Node 1029",
+        "URL": "station_analysis/",
+        "ID": "295",
+        "name": "KK2Z Node 1029 (295)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/295",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.45833333333333,
+          45.895833333333336
+        ]
+      },
+      "properties": {
+        "title": "VE2DVG Node 95",
+        "URL": "station_analysis/",
+        "ID": "301",
+        "name": "VE2DVG Node 95 (301)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/301",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.875,
+          42.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "K9TRV-WSPR-RX888-2",
+        "URL": "station_analysis/",
+        "ID": "313",
+        "name": "K9TRV-WSPR-RX888-2 (313)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/313",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.875,
+          42.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "K9TRV-WSPR-RX888-3",
+        "URL": "station_analysis/",
+        "ID": "314",
+        "name": "K9TRV-WSPR-RX888-3 (314)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/314",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.625,
+          -34.1875
+        ]
+      },
+      "properties": {
+        "title": "VK5ARG",
+        "URL": "station_analysis/",
+        "ID": "320",
+        "name": "VK5ARG (320)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/320",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.79166666666667,
+          45.4375
+        ]
+      },
+      "properties": {
+        "title": "N7FWL",
+        "URL": "station_analysis/",
+        "ID": "340",
+        "name": "N7FWL (340)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/340",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.04166666666667,
+          40.0625
+        ]
+      },
+      "properties": {
+        "title": "K3DFD",
+        "URL": "station_analysis/",
+        "ID": "405",
+        "name": "K3DFD (405)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/405",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.29166666666667,
+          51.229166666666664
+        ]
+      },
+      "properties": {
+        "title": "VE6AGD_PR",
+        "URL": "station_analysis/",
+        "ID": "415",
+        "name": "VE6AGD_PR (415)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/415",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.375,
+          38.9375
+        ]
+      },
+      "properties": {
+        "title": "KI4AFE",
+        "URL": "station_analysis/",
+        "ID": "417",
+        "name": "KI4AFE (417)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/417",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.125,
+          38.9375
+        ]
+      },
+      "properties": {
+        "title": "AC0G_sigma",
+        "URL": "station_analysis/",
+        "ID": "418",
+        "name": "AC0G_sigma (418)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/418",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.54166666666666,
+          -45.895833333333336
+        ]
+      },
+      "properties": {
+        "title": "TuhuraWSPR",
+        "URL": "station_analysis/",
+        "ID": "465",
+        "name": "TuhuraWSPR (465)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/465",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.79166666666667,
+          47.3125
+        ]
+      },
+      "properties": {
+        "title": "WI6P WSPRdaemon",
+        "URL": "station_analysis/",
+        "ID": "466",
+        "name": "WI6P WSPRdaemon (466)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/466",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.375,
+          -7.9375
+        ]
+      },
+      "properties": {
+        "title": "ZD8GB",
+        "URL": "station_analysis/",
+        "ID": "471",
+        "name": "ZD8GB (471)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/471",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.79166666666667,
+          41.4375
+        ]
+      },
+      "properties": {
+        "title": "DASI018",
+        "URL": "station_analysis/",
+        "ID": "478",
+        "name": "DASI018 (478)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/478",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.875,
+          42.354166666666664
+        ]
+      },
+      "properties": {
+        "title": "K9TRV-5",
+        "URL": "station_analysis/",
+        "ID": "480",
+        "name": "K9TRV-5 (480)",
+        "color": "#008000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/480",
+        "status": "Online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.125,
+          41.020833333333336
+        ]
+      },
+      "properties": {
+        "title": "KC2G",
+        "URL": "station_analysis/",
+        "ID": "181",
+        "name": "KC2G (181)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/181",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.58333333333333,
+          41.291666666666664
+        ]
+      },
+      "properties": {
+        "title": "N8OBJ Node 1001",
+        "URL": "station_analysis/",
+        "ID": "261",
+        "name": "N8OBJ Node 1001 (261)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/261",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.25,
+          36.0
+        ]
+      },
+      "properties": {
+        "title": "WB4VLQ Node 1018",
+        "URL": "station_analysis/",
+        "ID": "285",
+        "name": "WB4VLQ Node 1018 (285)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/285",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.08333333333333,
+          43.625
+        ]
+      },
+      "properties": {
+        "title": "N1HAC Node 1027",
+        "URL": "station_analysis/",
+        "ID": "293",
+        "name": "N1HAC Node 1027 (293)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/293",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.20833333333333,
+          40.645833333333336
+        ]
+      },
+      "properties": {
+        "title": "NJIT-Demo",
+        "URL": "station_analysis/",
+        "ID": "305",
+        "name": "NJIT-Demo (305)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/305",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.20833333333333,
+          39.729166666666664
+        ]
+      },
+      "properties": {
+        "title": "N8UR-SIGMOND",
+        "URL": "station_analysis/",
+        "ID": "482",
+        "name": "N8UR-SIGMOND (482)",
+        "color": "#FFA500",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/482",
+        "status": "Possibly Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.95833333333333,
+          40.895833333333336
+        ]
+      },
+      "properties": {
+        "title": "JJmp",
+        "URL": "station_analysis/",
+        "ID": "33",
+        "name": "JJmp (33)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/33",
+        "status": "Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.375,
+          37.395833333333336
+        ]
+      },
+      "properties": {
+        "title": "KFS_OMNI",
+        "URL": "station_analysis/",
+        "ID": "42",
+        "name": "KFS_OMNI (42)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/42",
+        "status": "Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.375,
+          37.395833333333336
+        ]
+      },
+      "properties": {
+        "title": "KFS_NW",
+        "URL": "station_analysis/",
+        "ID": "130",
+        "name": "KFS_NW (130)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/130",
+        "status": "Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.58333333333333,
+          37.291666666666664
+        ]
+      },
+      "properties": {
+        "title": "KE0KVI Node 68",
+        "URL": "station_analysis/",
+        "ID": "239",
+        "name": "KE0KVI Node 68 (239)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/239",
+        "status": "Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.04166666666667,
+          45.5625
+        ]
+      },
+      "properties": {
+        "title": "HarrisRM3100",
+        "URL": "station_analysis/",
+        "ID": "472",
+        "name": "HarrisRM3100 (472)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/472",
+        "status": "Offline"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.04166666666667,
+          45.5625
+        ]
+      },
+      "properties": {
+        "title": "HarrisFLC100",
+        "URL": "station_analysis/",
+        "ID": "473",
+        "name": "HarrisFLC100 (473)",
+        "color": "#FF0000",
+        "point-size": 6.0,
+        "full_url": "https://pswsnetwork.eng.ua.edu/station_analysis/473",
+        "status": "Offline"
+      }
+    }
+  ]
+}
