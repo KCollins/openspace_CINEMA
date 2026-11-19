@@ -22,6 +22,45 @@ OUT_DIR = os.path.join(BASE_DIR, "glotec_frames")
 TMP_DIR = tempfile.gettempdir()
 os.makedirs(OUT_DIR, exist_ok=True)
 
+def refresh_gap_bookends(frames_dir, max_gap_minutes=90, fade_minutes=20):
+    """Inserts 100% transparent PNGs around any gap > max_gap_minutes so OpenSpace
+    fades to invisible during interruptions."""
+    blank_rgba = np.zeros((2, 4, 4), dtype=np.uint8)
+    real_frames = []
+
+    # 1. Remove previous blank bookends and collect timestamps of real data frames
+    for fname in sorted(os.listdir(frames_dir)):
+        if not fname.lower().endswith(".png"):
+            continue
+        fpath = os.path.join(frames_dir, fname)
+        try:
+            dt = datetime.strptime(os.path.splitext(fname)[0], "%Y-%m-%dT%H-%M-%S")
+        except ValueError:
+            continue
+
+        img = plt.imread(fpath)
+        if img.ndim == 3 and img.shape[2] == 4 and float(img[..., 3].max()) == 0.0:
+            os.remove(fpath)
+        else:
+            real_frames.append(dt)
+
+    # 2. Place transparent fade-out / fade-in bookends across any gap
+    max_gap = timedelta(minutes=max_gap_minutes)
+    fade = timedelta(minutes=fade_minutes)
+    bookends_created = 0
+
+    for prev_dt, next_dt in zip(real_frames, real_frames[1:]):
+        if (next_dt - prev_dt) > max_gap:
+            for stamp_dt in (prev_dt + fade, next_dt - fade):
+                out_path = os.path.join(
+                    frames_dir, stamp_dt.strftime("%Y-%m-%dT%H-%M-%S.png")
+                )
+                if not os.path.exists(out_path):
+                    plt.imsave(out_path, blank_rgba)
+                    bookends_created += 1
+
+    print(f"Updated gap bookends ({bookends_created} transparent boundary frames).")
+
 
 def parse_file_date(fname):
     m = re.search(r"(\d{4})[-_]?(\d{2})[-_]?(\d{2})", fname)
@@ -149,7 +188,7 @@ def sync_glotec(max_files=3):  # 3 daily files = 216 frames at 20-min cadence
             ds.close()
             if os.path.exists(nc_path):
                 os.remove(nc_path)
-
+    refresh_gap_bookends(OUT_DIR)
     print("Sync complete.")
 
 

@@ -117,6 +117,44 @@ def parse_ionex_maps(ionex_text):
 
     return maps
 
+def refresh_gap_bookends(frames_dir, max_gap_minutes=90, fade_minutes=20):
+    """Inserts 100% transparent PNGs around any gap > max_gap_minutes so OpenSpace
+    fades to invisible during interruptions."""
+    blank_rgba = np.zeros((2, 4, 4), dtype=np.uint8)
+    real_frames = []
+
+    # 1. Remove previous blank bookends and collect timestamps of real data frames
+    for fname in sorted(os.listdir(frames_dir)):
+        if not fname.lower().endswith(".png"):
+            continue
+        fpath = os.path.join(frames_dir, fname)
+        try:
+            dt = datetime.strptime(os.path.splitext(fname)[0], "%Y-%m-%dT%H-%M-%S")
+        except ValueError:
+            continue
+
+        img = plt.imread(fpath)
+        if img.ndim == 3 and img.shape[2] == 4 and float(img[..., 3].max()) == 0.0:
+            os.remove(fpath)
+        else:
+            real_frames.append(dt)
+
+    # 2. Place transparent fade-out / fade-in bookends across any gap
+    max_gap = timedelta(minutes=max_gap_minutes)
+    fade = timedelta(minutes=fade_minutes)
+    bookends_created = 0
+
+    for prev_dt, next_dt in zip(real_frames, real_frames[1:]):
+        if (next_dt - prev_dt) > max_gap:
+            for stamp_dt in (prev_dt + fade, next_dt - fade):
+                out_path = os.path.join(
+                    frames_dir, stamp_dt.strftime("%Y-%m-%dT%H-%M-%S.png")
+                )
+                if not os.path.exists(out_path):
+                    plt.imsave(out_path, blank_rgba)
+                    bookends_created += 1
+
+    print(f"Updated gap bookends ({bookends_created} transparent boundary frames).")
 
 def fetch_storm_range(start_date="2024-05-10", end_date="2024-05-12", vmax=120):
     dt = datetime.strptime(start_date, "%Y-%m-%d")
@@ -149,7 +187,7 @@ def fetch_storm_range(start_date="2024-05-10", end_date="2024-05-12", vmax=120):
 
         print(f"Exported {created} hourly PNG frames for {dt:%Y-%m-%d}.")
         dt += timedelta(days=1)
-
+    refresh_gap_bookends(OUT_DIR)
     print("Historical TEC sync complete.")
 
 
