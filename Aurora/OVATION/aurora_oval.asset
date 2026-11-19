@@ -1,0 +1,34 @@
+local earth = asset.require("scene/solarsystem/planets/earth/earth")
+local earthIdentifier = (type(earth) == "table" and earth.Identifier) or "Earth"
+
+local framesFolder = asset.resource("aurora_frames")
+
+local AuroraOval = {
+  Identifier = "NOAA_OVATION_Aurora",
+  Parent = earthIdentifier,
+  Renderable = {
+    Type = "RenderableTimeVaryingSphere",
+    TextureSource = framesFolder,
+    Segments = 64,
+    Size = 6488137.0, -- Earth radius (6378.1 km) + 110 km auroral altitude
+    Opacity = 0.85,
+    BlendingOption = "Additive",
+    Orientation = "Outside",
+    ShowAtAllTimes = false,
+    DisableDepth = true
+  },
+  GUI = {
+    Name = "Aurora Oval (OVATION / Historical)",
+    Path = "/Solar System/Planets/Earth/Space Weather"
+  }
+}
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(AuroraOval)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(AuroraOval)
+end)
+
+asset.export(AuroraOval)
