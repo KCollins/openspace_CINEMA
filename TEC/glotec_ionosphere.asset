@@ -1,0 +1,34 @@
+local earth = asset.require("scene/solarsystem/planets/earth/earth")
+local earthIdentifier = (type(earth) == "table" and earth.Identifier) or "Earth"
+
+local framesFolder = asset.resource("glotec_frames")
+
+local GloTECIonosphere = {
+  Identifier = "NOAA_GloTEC_Ionosphere",
+  Parent = earthIdentifier,
+  Renderable = {
+    Type = "RenderableTimeVaryingSphere",
+    TextureSource = framesFolder,
+    Segments = 64,
+    Size = 6728137.0, -- Earth radius (6378.1 km) + 350 km F-region altitude
+    Opacity = 0.65,
+    BlendingOption = "Additive",
+    Orientation = "Outside",
+    ShowAtAllTimes = false,
+    DisableDepth = true
+  },
+  GUI = {
+    Name = "NOAA GloTEC (Ionosphere TEC)",
+    Path = "/Solar System/Planets/Earth/Space Weather"
+  }
+}
+
+asset.onInitialize(function()
+  openspace.addSceneGraphNode(GloTECIonosphere)
+end)
+
+asset.onDeinitialize(function()
+  openspace.removeSceneGraphNode(GloTECIonosphere)
+end)
+
+asset.export(GloTECIonosphere)
