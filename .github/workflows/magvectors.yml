@@ -21,8 +21,8 @@ jobs:
         with:
           python-version: "3.13"
 
-      # - name: Install dependencies
-      #   run: pip install numpy requests
+      - name: Install dependencies
+        run: pip install numpy requests pandas xarray hapiclient
 
       - name: Run magnetometer vector pipeline
         # env:
