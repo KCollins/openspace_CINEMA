@@ -1,3 +1,4 @@
+```
 rbn-openspace/
 ├── pipeline.sh               # End-to-end orchestration script
 ├── generate_colortables.py   # Generates OpenSpace transfer function .txt files
@@ -10,10 +11,11 @@ rbn-openspace/
 └── output/
     ├── colortables/          # Generated .txt transfer functions
     └── osfls/                # Generated YYYY-MM-DDThh-mm-ss-000.osfls sequence
-
+```
 
 Install requirements:
- pip install numpy requests
+ `pip install numpy requests`
 
-chmod +x pipeline.sh
-QRZ_USER="your_callsign" QRZ_PASS="your_password" ./pipeline.sh
+Run: 
+`chmod +x pipeline.sh`
+`QRZ_USER="your_callsign" QRZ_PASS="your_password" ./pipeline.sh`
