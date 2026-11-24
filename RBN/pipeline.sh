@@ -4,8 +4,8 @@ set -euo pipefail
 export QRZ_USER="${QRZ_USER:-}"
 export QRZ_PASS="${QRZ_PASS:-}"
 
-START_TIME="2025-10-25T00:00:00Z"
-END_TIME="2025-10-25T06:00:00Z"
+START_TIME="2024-05-10T00:00:00Z"
+END_TIME="2024-05-15T06:00:00Z"
 STEP_MINUTES=1                      # Advance 1 minute per .osfls frame
 WINDOW_MINUTES=3                    # Each spot stays visible for 3 minutes, then disappears
 
